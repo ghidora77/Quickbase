@@ -1,7 +1,8 @@
 from DateRange import BuildDateRange
 from Dropbox import to_dropbox
+from dotenv import load_dotenv
 import os
-
+load_dotenv()
 """
 This is a consolidation script
 1. Builds the Date Range
@@ -12,7 +13,7 @@ This is a consolidation script
 df = BuildDateRange()
 
 # Builds the entire Date Range dataset
-token = os.environ["DROPBOX"]
+token = os.getenv('DROPBOX_ACCESS_TOKEN')
 path = '/DateRange/'
 fname = 'DateRange.csv'
 

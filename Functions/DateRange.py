@@ -15,13 +15,14 @@ def get_json():
     df = pd.read_json(URL)
     return df
 
-
+"""
 def filter_data(df):
     # Filter by Status
     value_list = ['Complete', 'Rejected By NGA', 'Accept but Rework']
     boolean_series = df.STATUS.isin(value_list)
     df = df[boolean_series]
     return df
+"""
 
 
 def cleanDateRange(df):
@@ -40,7 +41,7 @@ def BuildDateRange():
     Subsequent runs will only process records that are not in the initial dataframe. 
     """
     df = get_json()
-    df = filter_data(df)
+    #df = filter_data(df)
     df = cleanDateRange(df)
     return df
 

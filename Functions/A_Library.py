@@ -1,6 +1,8 @@
 from Dropbox import to_dropbox
 from Library import BuildLibrary
+from dotenv import load_dotenv
 import os
+load_dotenv()
 
 """
 This is a consolidation script
@@ -11,7 +13,7 @@ This is a consolidation script
 
 
 df = BuildLibrary()
-token = os.environ["DROPBOX"]
+token = os.getenv('DROPBOX_ACCESS_TOKEN')
 
 path = '/Library/'
 fname = 'Library.csv'

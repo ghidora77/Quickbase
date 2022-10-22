@@ -22,7 +22,7 @@ def get_json():
 def clean_json(df):
     df.columns = df.columns.str.replace('data.', '')
     df.columns = map(str.title, df.columns)
-    df = df.drop(['Recordcount', 'Index'], axis = 1)
+    df = df.drop(['Recordcount', 'Index'], axis=1)
     df.reset_index(inplace=False)
     return df
 
